@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{%block title %} Contact page{%endblock title%}
+{% block body %}
+ <div class="container-fluid px-0 mb-3">
+    <img src="https://source.unsplash.com/1500x400/?Message,Call" class="d-block w-100 my-0" alt="image1">
+ </div>
+<div class="container mb-3 py-4">   
+    <h2 class="text-center"> <b>Contact Us</b> </h2>
+    <form method="POST" action="/about">
+    {% csrf_token %}
+        <div class="form-group">
+            <label for="email"><b>Email address</b></label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+            <label for="name"><b>Enter Your Name</b></label>
+            <input type="name" class="form-control" id="name" placeholder="Your name here..">
+        </div>
+        <div class="form-group">
+            <label for="cn"><b>Course select</b></label>
+            <select class="form-control" id="cn">
+                <option>--</option>
+                <option>Python</option>
+                <option>Java</option>
+                <option>Digital Marketing</option>
+                <option>Hacking</option>
+                <option>Django</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cd"><b>Course duration</b></label>
+            <select class="form-control" id="cd">
+                <option>--</option>
+                <option>Two Week</option>
+                <option>Three Week</option>
+                <option>One Month</option>
+                <option>1.5 Month</option>
+                <option>2 Months</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Message"><b>Tell me About What you want to contact...</b></label>
+            <textarea class="form-control" id="Message" rows="3"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock body %}
